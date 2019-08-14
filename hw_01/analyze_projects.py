@@ -2,7 +2,7 @@ import os
 import collections
 import argparse
 
-from .utils import get_top_words
+from utils import get_top_words
 
 
 def print_calc_result(_project, verb_size, words):
