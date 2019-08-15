@@ -2,7 +2,8 @@ import os
 import collections
 import argparse
 
-from utils import get_top_words
+from utils import get_top_words, clone_github_repo
+from console_user_requests import clone_github_request
 
 
 def print_calc_result(_project, verb_size, words):
@@ -32,6 +33,13 @@ def console_parser():
 
 if __name__ == '__main__':
     # TODO Need add some logging
+
+    clone_github_answer = clone_github_request()
+
+    if clone_github_answer:
+        print(f'Репозиторий клонируется...')
+        clone_github_repo(clone_github_answer['rep_link'], clone_github_answer['dir'])
+        print(f'Клонирование успешно завершено!')
 
     TOP_SIZE = 200
 
