@@ -51,6 +51,9 @@ if __name__ == '__main__':
         'requests',
         'sqlalchemy',
     ]
+    user_answer = input('Провести анализ кода проекта ? (y/n)')
+    if user_answer.lower() not in {'y','да'}:
+        exit()
 
     console_args = console_parser()
 
