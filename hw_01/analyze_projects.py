@@ -61,4 +61,4 @@ if __name__ == '__main__':
                               word_size=TOP_SIZE,
                               only_func_names=console_args.fn,
                               only_verbs=console_args.v,
-                              to_json=True)
+                              to_json=console_args.j,)

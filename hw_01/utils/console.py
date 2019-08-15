@@ -69,6 +69,7 @@ def console_parser():
     parser.add_argument('path', type=str, default='', help='Path to project')
     parser.add_argument('-fn', action='store_true', help='Calculate words in function names')
     parser.add_argument('-v', action='store_true', help='Calculate verbs')
+    parser.add_argument('-j', action='store_true', help='Save to the json')
     args = parser.parse_args()
-    print(f'Analyze path={args.path}, -fn={args.fn}, -v={args.v}.')
+    print(f'Analyze path={args.path}, -fn={args.fn}, -v={args.v}, -j={args.j}.')
     return args
