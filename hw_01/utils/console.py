@@ -1,3 +1,4 @@
+import argparse
 import os
 
 
@@ -28,7 +29,7 @@ def get_github_clone_dir():
                 continue
             break
 
-        if is_continue():
+        if is_continue_question():
             continue
         return None
 
@@ -43,7 +44,7 @@ def get_github_rep_link():
         if git_rep:
             break
 
-        if is_continue():
+        if is_continue_question():
             continue
 
         return None
@@ -51,9 +52,8 @@ def get_github_rep_link():
     return git_rep.rstrip()
 
 
-def is_continue():
+def is_continue_question():
     answer = input('Ошибка! Продолжить (y/n): ')
-
     return answer.lower() in {'y', 'да'}
 
 
@@ -62,3 +62,13 @@ if __name__ == '__main__':
     # dir = 'django'
     user_answer = clone_github_request()
     print(user_answer)
+
+
+def console_parser():
+    parser = argparse.ArgumentParser(description='Analyze project code by words and verbs.', add_help=True)
+    parser.add_argument('path', type=str, default='', help='Path to project')
+    parser.add_argument('-fn', action='store_true', help='Calculate words in function names')
+    parser.add_argument('-v', action='store_true', help='Calculate verbs')
+    args = parser.parse_args()
+    print(f'Analyze path={args.path}, -fn={args.fn}, -v={args.v}.')
+    return args
