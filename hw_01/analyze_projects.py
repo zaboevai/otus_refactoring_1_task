@@ -2,8 +2,9 @@ import os
 import collections
 import argparse
 
-from utils import get_top_words, clone_github_repo
-from console_user_requests import clone_github_request
+from utils.word_analyser import get_top_words
+from utils.github import clone_github_repo
+from utils.console_user_requests import clone_github_request
 
 
 def print_calc_result(_project, verb_size, words):
