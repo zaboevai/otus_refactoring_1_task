@@ -17,4 +17,4 @@ def save_to_json_file(_project, words):
     for word, word_count in words.keys():
         json_string['project']['words'][word] = word_count
     with open("data_file.json", "w") as write_file:
-        json.dump(json_string, write_file, )
+        json.dump(json_string, write_file, indent=4)
